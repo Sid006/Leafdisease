@@ -19,7 +19,7 @@ torchutils
 albumentations
 altair
 attrs
-backports.zoneinfo
+backports.zoneinfo;python_version<"3.9"
 blinker
 cachetools
 certifi
