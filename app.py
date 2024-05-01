@@ -265,11 +265,11 @@ def view_result_default(result: Results, result_list_json, centers=None):
             ytb1, ytb2 = st.columns([1, 1])
             with ytb1:
             # Embed a youtube video
-                st_player("https://youtu.be/cGhzyhnKi5U")
+                st_player("https://www.youtube.com/watch?v=eTA8VFeE-6Q")
 
             with ytb2:
             # Embed a music from SoundCloud
-                st_player("https://youtu.be/eTA8VFeE-6Q")
+                st_player("https://www.youtube.com/watch?v=PSXXoGrOyDg")
             bprinted = True
 
     
