@@ -193,11 +193,11 @@ def view_result_default(result: Results, result_list_json, centers=None):
             yt1, yt2 = st.columns([1, 1])
             with yt1:
             # Embed a youtube video
-                st_player("https://youtu.be/dnNJwQ86c4w")
+                st_player("https://youtu.be/1b9l4QT2644?si=1jSBexwGxfuRKQdb")
 
             with yt2:
             # Embed a music from SoundCloud
-                st_player("https://youtu.be/NcnHd4xSMvk")
+                st_player("https://youtu.be/9tLOYGpFMJE?si=_na4d2C28LJrUNr9")
             lprinted = True
 
              
@@ -331,11 +331,11 @@ def view_result_default(result: Results, result_list_json, centers=None):
             ytn1, ytn2 = st.columns([1, 1])
             with ytn1:
             # Embed a youtube video
-                st_player("https://youtu.be/-g4TSPkVJUU")
+                st_player("https://youtu.be/ManD4JLW4z4?si=DSxuY3ILbJr3aYyk")
 
             with ytn2:
             # Embed a music from SoundCloud
-                st_player("https://youtu.be/vdSTlA_FtbY")   
+                st_player("https://youtu.be/xJqkXK3htyY?si=2Q-MSrthKfaNvgO3")   
             nprinted = True
 
 
@@ -399,11 +399,11 @@ def view_result_default(result: Results, result_list_json, centers=None):
             youtubec1, youtubec2 = st.columns([1, 1])
             with youtubec1:
             # Embed a youtube video
-                st_player("https://youtu.be/Kzm6jxeU1kg")
+                st_player("https://youtu.be/4GYpcXncLCg?si=qLlBwY-pnv9oej4t")
 
             with youtubec2:
             # Embed a music from SoundCloud
-                st_player("https://youtu.be/xEqiNh0upMk")  
+                st_player("https://youtu.be/A_xsjZ139g4?si=8lDd2UQYcLelebl3")  
             pprinted = True
 
 
