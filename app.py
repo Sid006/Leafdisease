@@ -493,15 +493,6 @@ def imageInput(device):
          
 
 def main(): 
-    #Logo image here
-    #st.sidebar.image("./replant/logoleafine.png")
-    #st.sidebar.caption("### Your Plant Wellbeing Assistant🍃 ###") 
-    #st.sidebar.title('⚙️ Select option')
-    # activities = ["Detection with YOLO (Analyzed disease)", "Detection with ResNeXt (GradCam Visualization)"]
-    # choice = st.sidebar.selectbox("# Click here to know more.. #",activities)
-
-    #st.sidebar.markdown("https://bit.ly/3uvYQ3R")
-
     #background image
        
         st.markdown("<h1 style='text-align: left; color: white; text-shadow: 5px 5px 5px green; font-size: 60px; font-family: 'Trebuchet MS', sans-serif;'>Leaf Disease Detector</h1>", unsafe_allow_html=True)
@@ -542,35 +533,8 @@ def main():
       
 
     
-    # elif choice == 'Detection with ResNeXt (GradCam Visualization)' :
-
-    #     # Enable garbage collection
-    #     gc.enable()
-
-    #     # Hide warnings
-    #     st.set_option("deprecation.showfileUploaderEncoding", False)
-
-    #     # Set the directory path
-    #     my_path = "."
-
-    #     test = pd.read_csv("data/sample.csv")
-    #     output_image = my_path + "/images/gradcam2.png"
-    #     st.image("./replant/logoleafine.png")
-    #     # Perceive the leaf ailment and sort out some way to treat them
-    #     st.caption('### GradCam Visualization and Detection with ResNeXt Detector ###')
-        
-    #     st.markdown("***")
-
-        # def run():
-        # # Set the box for the user to upload an image
-        # st.subheader('🔽Upload Image 📸')
-        # uploaded_image = st.file_uploader(
-        #         "Upload your image in JPG or PNG format", type=["jpg", "png"]
-        #     )
         uploaded_image=None
-        #     return uploaded_image
-        # st.image("./replant/tips.png")
-        # st.image("./replant/tip2.png")
+        
 
 
         # DataLoader for pytorch dataset
