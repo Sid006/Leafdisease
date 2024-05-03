@@ -648,48 +648,48 @@ def main():
                     "**Scroll down to read the full report (Grad-cam and class probabilities)**"
                 )
 
-                # Display the Grad-Cam image
-                st.caption("# Grad-cam visualization ##")
-                st.caption("Grad-CAM (Gradient-weighted Class Activation Mapping) can be used to generate visualizations that highlight the regions of a leaf image that are most indicative of disease. " )
-                st.write("")  
-                st.caption("It assists with understanding if the model put together its predictions on the correct regions of the image.")
-                gram_im = cv2.imread(output_image)
-                #st.image(gram_im, width=528, channels="BGR")
-                st.image("./images/gradcam2.png",width=560)
+                # # Display the Grad-Cam image
+                # st.caption("# Grad-cam visualization ##")
+                # st.caption("Grad-CAM (Gradient-weighted Class Activation Mapping) can be used to generate visualizations that highlight the regions of a leaf image that are most indicative of disease. " )
+                # st.write("")  
+                # st.caption("It assists with understanding if the model put together its predictions on the correct regions of the image.")
+                # gram_im = cv2.imread(output_image)
+                # #st.image(gram_im, width=528, channels="BGR")
+                # st.image("./images/gradcam2.png",width=560)
 
-                # Display the class probabilities table
-                st.caption("## Class Predictions: ##")
-                st.write("")
-                if np.amax(logits) < 0.57:
-                    #st.markdown(unknown_msg, unsafe_allow_html=True)
-                    st.write("")
-                classes["CONFIDENCE📊%"] = logits.reshape(-1).tolist()
-                classes["CONFIDENCE📊%"] = classes["CONFIDENCE📊%"] * 100
-                cm = sns.color_palette("blend:white,green", as_cmap=True)
-                classes_proba = classes.style.background_gradient(cmap=cm)
-                st.write(classes_proba)
+                # # Display the class probabilities table
+                # st.caption("## Class Predictions: ##")
+                # st.write("")
+                # if np.amax(logits) < 0.57:
+                #     #st.markdown(unknown_msg, unsafe_allow_html=True)
+                #     st.write("")
+                # classes["CONFIDENCE📊%"] = logits.reshape(-1).tolist()
+                # classes["CONFIDENCE📊%"] = classes["CONFIDENCE📊%"] * 100
+                # cm = sns.color_palette("blend:white,green", as_cmap=True)
+                # classes_proba = classes.style.background_gradient(cmap=cm)
+                # st.write(classes_proba)
 
-                fig = px.bar(x=classes['LABELS🏷️'], y=classes['CONFIDENCE📊%'],color=classes['CONFIDENCE📊%'],
-                title="Bar plot which holds Labels on x-axis and Confidence of the disease on y-axis",)
-                st.write(fig)
+                # fig = px.bar(x=classes['LABELS🏷️'], y=classes['CONFIDENCE📊%'],color=classes['CONFIDENCE📊%'],
+                # title="Bar plot which holds Labels on x-axis and Confidence of the disease on y-axis",)
+                # st.write(fig)
                 
-                del (
-                    model,
-                    states,
-                    fc_params,
-                    final_conv,
-                    test_loader,
-                    image_1,
-                    activated_features,
-                    weight,
-                    heatmap,
-                    gram_im,
-                    logits,
-                    output,
-                    pred_idx,
-                    classes_proba,
-                )
-                gc.collect()
+                # del (
+                #     model,
+                #     states,
+                #     fc_params,
+                #     final_conv,
+                #     test_loader,
+                #     image_1,
+                #     activated_features,
+                #     weight,
+                #     heatmap,
+                #     gram_im,
+                #     logits,
+                #     output,
+                #     pred_idx,
+                #     classes_proba,
+                # )
+                # gc.collect()
 
 
 
