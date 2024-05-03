@@ -23,31 +23,13 @@ sys.path.append('./ultralytics/yolo')
 
 #### Yolov8 imports ####
 from utilsv8 import get_detection_folderv8, check_folders
-# import redirect as rd
-# from ultralytics.yolo.engine.model import YOLO
 from ultralytics import YOLO
 from ultralytics.engine.results import Results
 
-# from ultralytics.yolo.engine.results import Results
 
 import streamlit as st
 from PIL import Image
 import os
-
-# ### ResNeXt imports #####
-# from dataset import ResNetDataset, classes, get_transforms
-# from grad_cam import SaveFeatures, getCAM, plotGradCAM
-# from html_mardown import (class0, class1,
-#                           class2, class3, class4,
-#                           image_uploaded_success, loading_bar,
-#                           model_predicting, more_options, result_pred,
-#                           s_load_bar, unknown, unknown_msg, unknown_side,
-#                           unknown_w)
-# from inference import inference, load_state
-# from models import resnext50_32x4d
-# from utilsgrad import CFG
-
-
 
 logo = "./replant/tablogo.png"
 st.set_page_config(page_title="Yolodetector", page_icon=logo, layout="centered", initial_sidebar_state="expanded")
@@ -460,25 +442,7 @@ def imageInput(device):
             annotated_text(("Saliency mask view","","#2E7C30"))
             st.image(salie_im, width=528, channels="RGB")
 
-        # call Model prediction--
-       
-        #  model = torch.hub.load('ultralytics/yolov5', 'custom' , path ='models/yleafinev5.pt', force_reload = True, _verbose = False)
-        
-        # model = torch.hub.load('ultralytics/yolov5', 'custom', path = 'models/yleafinev5.pt', force_reload = True, _verbose = False)
-        # _ = model.cuda() if device == 'cuda' else model.cpu() # hide cuda_cnn display source : https://stackoverflow.com/questions/41149781/how-to-prevent-f-write-to-output-the-number-of-characters-written
-        # pred = model(imgpath)
-        # st.write(pred)
-        # pred.render()  # render bbox in image
-        # for im in pred.ims:
-        #     im_base64 = Image.fromarray(im)
-        #     im_base64.save(outputpath)
 
-        # pred.save()
-        # detect_val = (pred.pandas().xyxy[0]).values.tolist()
-
-      
-        #to know the detection results
-        #st.write(detect_val)
 
         annotated_text(("YOLOv8","detections","#2E7C30"))
         out1, out2 = st.columns(2)
@@ -515,10 +479,7 @@ def imageInput(device):
                   st.image(img, channels="BGR")
                       
             
-            
-        #st.write(results)
-                
-        # st.balloons()
+
 
         
        
