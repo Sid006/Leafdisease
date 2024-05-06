@@ -45,7 +45,6 @@ def result_to_json(result: Results, tracker=None):
     Convert result from ultralytics YOLOv8 prediction to json format
     Parameters:
         result: Results from ultralytics YOLOv8 prediction
-        tracker: DeepSort tracker
     Returns:
         result_list_json: detection result in json format
     """
