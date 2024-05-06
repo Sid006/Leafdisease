@@ -60,8 +60,6 @@ def result_to_json(result: Results, tracker=None):
                 'y_min': int(result.boxes.xyxy[idx][1]),
                 'x_max': int(result.boxes.xyxy[idx][2]),
                 'y_max': int(result.boxes.xyxy[idx][3]),
-                # 'x_min': int(result.boxes.boxes[idx][0]),
-                # 'y_min': int(result.boxes.boxes[idx][1]),
                 
             },
         } for idx in range(len_results)
@@ -501,31 +499,14 @@ def main():
         st.text("")
 
 
-        # st.image("./replant/logoleafine.png")
-        # Perceive the leaf ailment and sort out some way to treat them
         st.caption('### Recognize & Perceive the leaf illness and figure out how to treat them!')
         st.markdown("***")
         
         col1, col2 = st.columns(2)
-
-        # with col2:
-        #     # option = st.sidebar.radio("Select input type.", ['Image', 'Video'])
-        #     if torch.cuda.is_available():
-        #         deviceoption = st.radio("Select runtime mode :", ['cpu', 'cuda (GPU)'], index=1)
-        #     else:
-        #         deviceoption = st.radio("Select runtime mode :", ['cpu', 'cuda (GPU)'], index=0)
-        #     # -- End of Sidebar
-        # with col1:
-        #     pages_name = ['Upload own data']
-        #     page = st.radio('Select option mode :', pages_name) 
-        
         page = 'upload own data'
 
-        # if page == "Upload own data":
-        # st.subheader('🔽Upload Image 📸')
         t1 = time.perf_counter()
         deviceoption = 'cpu'
-        # deviceoption = 'cpu'
         imageInput(deviceoption)
         t2 = time.perf_counter()
         st.success('Time taken to run: {:.2f} sec'.format(t2-t1))
@@ -615,32 +596,25 @@ def main():
                 # Display Unknown class if the highest probability is lower than 0.5
                 if np.amax(logits) < 0.57:
                     st.markdown(unknown, unsafe_allow_html=True)
-                  #  st.sidebar.markdown(unknown_side, unsafe_allow_html=True)
-                   # st.sidebar.markdown(unknown_w, unsafe_allow_html=True)
 
                 # Display the class predicted if the highest probability is higher than 0.5
                 else:
                     st.write("")
                     if pred_idx[0] == 0:
-                       # st.markdown(class0, unsafe_allow_html=True)
 
                         st.success(" The predicted class is: **Bacterial Blight**")
                     elif pred_idx[0] == 1:
-                        #st.markdown(class1, unsafe_allow_html=True)
 
                         st.success(
                             "The predicted class is: **Nitrogen Deficiency**"
                         )
                     elif pred_idx[0] == 2:
-                       # st.markdown(class2, unsafe_allow_html=True)
 
                         st.success("The predicted class is: **Leaf Spot**")
                     elif pred_idx[0] == 3:
-                        #st.markdown(class3, unsafe_allow_html=True)
 
                         st.success("The predicted class is: **Anthracnose**")
                     elif pred_idx[0] == 4:
-                        #st.markdown(class4, unsafe_allow_html=True)
 
                         st.success("The predicted class is: **Healthy**")
 
@@ -648,48 +622,7 @@ def main():
                     "**Scroll down to read the full report (Grad-cam and class probabilities)**"
                 )
 
-                # # Display the Grad-Cam image
-                # st.caption("# Grad-cam visualization ##")
-                # st.caption("Grad-CAM (Gradient-weighted Class Activation Mapping) can be used to generate visualizations that highlight the regions of a leaf image that are most indicative of disease. " )
-                # st.write("")  
-                # st.caption("It assists with understanding if the model put together its predictions on the correct regions of the image.")
-                # gram_im = cv2.imread(output_image)
-                # #st.image(gram_im, width=528, channels="BGR")
-                # st.image("./images/gradcam2.png",width=560)
-
-                # # Display the class probabilities table
-                # st.caption("## Class Predictions: ##")
-                # st.write("")
-                # if np.amax(logits) < 0.57:
-                #     #st.markdown(unknown_msg, unsafe_allow_html=True)
-                #     st.write("")
-                # classes["CONFIDENCE📊%"] = logits.reshape(-1).tolist()
-                # classes["CONFIDENCE📊%"] = classes["CONFIDENCE📊%"] * 100
-                # cm = sns.color_palette("blend:white,green", as_cmap=True)
-                # classes_proba = classes.style.background_gradient(cmap=cm)
-                # st.write(classes_proba)
-
-                # fig = px.bar(x=classes['LABELS🏷️'], y=classes['CONFIDENCE📊%'],color=classes['CONFIDENCE📊%'],
-                # title="Bar plot which holds Labels on x-axis and Confidence of the disease on y-axis",)
-                # st.write(fig)
-                
-                # del (
-                #     model,
-                #     states,
-                #     fc_params,
-                #     final_conv,
-                #     test_loader,
-                #     image_1,
-                #     activated_features,
-                #     weight,
-                #     heatmap,
-                #     gram_im,
-                #     logits,
-                #     output,
-                #     pred_idx,
-                #     classes_proba,
-                # )
-                # gc.collect()
+           
 
 
 
